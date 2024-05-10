@@ -1,0 +1,17 @@
+{
+"networks": {
+    "nodes": [
+      {
+        "nodes_file": "network/network_nodes.h5",
+        "node_types_file": "network/network_node_types.csv"
+      }
+    ],
+    "edges": [
+      {
+        "edges_file": "network/network_network_edges.h5",
+        "edge_types_file": "network/network_network_edge_types.csv" 
+      }
+    ],
+    "gap_juncs": []
+  }
+}

@@ -4,6 +4,8 @@
 # repo stuff
 Modeling-paper/
 
+network/
+
 # Neuron stuff
 x86_64/
 *.dll

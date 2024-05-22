@@ -39,8 +39,8 @@ begintemplate CP_Cell
 		bdendDiam = 2.2799248874
 
 		// passive properties
-		RM_scale = 1.2 // scale membrane resistance
-		Cap_scale = 0.8 // scale membrance capacitance
+		RM_scale = 0.8 // scale membrane resistance
+		Cap_scale = 1 // scale membrance capacitance
 		rall = 114.510490019 // Ra all
 		axonCap =  1.01280903702 * Cap_scale // capacitance
 		somaCap =  1.78829677463 * Cap_scale

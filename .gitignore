@@ -1,6 +1,9 @@
 # Mac Stuff
 .DS_Store
 
+# repo stuff
+Modeling-paper/
+
 # Neuron stuff
 x86_64/
 *.dll

@@ -19,7 +19,7 @@ randseed = 1234
 rng = np.random.default_rng(randseed)
 connectors.rng = rng
 
-network_dir = 'network1'
+network_dir = 'network'
 t_sim = 31000.0  # ms
 dt = 0.1  # ms
 
@@ -585,8 +585,8 @@ edge_params = {
         'connector_class': ReciprocalConnector,
         'connector_params': {
             'p0': GaussianDropoff(
-                stdev=195.18503523933282, min_dist=0., max_dist=max_conn_dist,
-                pmax=0.10106243675277583, ptotal_dist_range=range(0, max_conn_dist),
+                stdev=78, min_dist=0., max_dist=max_conn_dist,
+                pmax=0.08, ptotal_dist_range=range(0, max_conn_dist),
                 dist_type='cylindrical'),
             'p0_arg': cylindrical_dist_z,
             },
@@ -676,18 +676,18 @@ edge_params = {
         'connector_class': ReciprocalConnector,
         'connector_params': {
             'p0': GaussianDropoff(#from Holmgren et al 2003 
-                stdev=156.87416370001523, min_dist=0., max_dist=max_conn_dist,
-                pmax=0.7121172559311129, ptotal_dist_range=range(0, max_conn_dist),
+                stdev=99.84, min_dist=0., max_dist=max_conn_dist,
+                pmax=0.71, ptotal_dist_range=range(0, max_conn_dist),
                 dist_type='cylindrical'),
             'p0_arg': cylindrical_dist_z,
             'p1': GaussianDropoff(#from Holmgren et al 2003 
-                stdev=276.75363118727, min_dist=0., max_dist=max_conn_dist,
-                pmax=0.5854127354379889, ptotal_dist_range=range(0, max_conn_dist),
+                stdev=96, min_dist=0., max_dist=max_conn_dist,
+                pmax=0.59, ptotal_dist_range=range(0, max_conn_dist),
                 dist_type='spherical'),
             'p1_arg': spherical_dist,
             'pr': GaussianDropoff(#from Holmgren et al 2003 
-                stdev=89.02589837291814, min_dist=0., max_dist=max_conn_dist,
-                pmax=0.4758204755821167, ptotal_dist_range=range(0, max_conn_dist),
+                stdev=56, min_dist=0., max_dist=max_conn_dist,
+                pmax=0.56, ptotal_dist_range=range(0, max_conn_dist),
                 dist_type='spherical'),#spherical cause FSI connection sperical still?
             'pr_arg': spherical_dist
             },
@@ -720,7 +720,7 @@ edge_params = {
             'p0_arg': cylindrical_dist_z,
             'p1': GaussianDropoff(
                 stdev=96.60, min_dist=min_conn_dist, max_dist=max_conn_dist,
-                ptotal=0.39, ptotal_dist_range=(min_conn_dist, 100.),
+                ptotal=0.68, ptotal_dist_range=(min_conn_dist, 100.),
                 dist_type='spherical'),
             'p1_arg': spherical_dist,
             'pr': 0.16,

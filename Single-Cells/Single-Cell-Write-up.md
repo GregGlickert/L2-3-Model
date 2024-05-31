@@ -11,8 +11,10 @@ The PN single cell properties we will be using are from Hirai et al 2012
 
 ![image](PNProps.png)
 ## FSI cell
+
 We plan on using the same cell as the L5 M1 model. If we wanted to switch this for a more L2/3 version I don't yet have data.
 ## LTS cell
+
 We plan on using the same cell as the L5 M1 model, but if we do want to change the cell these are the values we would shoot for from Fino et al 2011
 
 ![image](LTSCell.png)

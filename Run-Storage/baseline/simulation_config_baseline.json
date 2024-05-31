@@ -1,0 +1,109 @@
+{
+  "target_simulator": "NEURON",
+  "run": {
+    "tstart": 0.0,
+    "tstop": 14500.0,
+    "dt": 0.1,
+    "dL": 2000000.0,
+    "spike_threshold": -15.0,
+    "nsteps_block": 5000
+  },
+  "conditions": {
+    "celsius": 36.0,
+    "v_init": -70.0
+  },
+  "inputs": {
+    "baseline_spikes": {
+      "input_type": "spikes",
+      "module": "sonata",
+      "input_file": "/home/group/L2-3-Model/Network-Parameters/input/baseline.h5",
+      "node_set": "baseline"
+    },
+    "shell_spikes": {
+      "input_type": "spikes",
+      "module": "sonata",
+      "input_file": "/home/group/L2-3-Model/Network-Parameters/input/shell.h5",
+      "node_set": "shell"
+    }
+  },
+  "output": {
+    "log_file": "../Run-Storage/baseline/log.txt",
+    "output_dir": "../Run-Storage/baseline",
+    "spikes_file": "../Run-Storage/baseline/spikes.h5"
+  },
+  "reports": {
+    "ecp": {
+      "cells": "all",
+      "variable_name": "v",
+      "module": "ecp",
+      "electrode_positions": "./components/recXelectrodes/single_electrode.csv",
+      "file_name": "ecp.h5",
+      "electrode_channels": "all",
+      "tmp_dir": "../Run-Storage/baseline"
+    }
+  },
+  "node_sets_file": "/home/group/L2-3-Model/Network-Parameters/node_sets.json",
+  "network": "circuit_config.json",
+  "config_path": "/home/group/L2-3-Model/Network-Parameters/simulation_config_baseline.json",
+  "config_dir": "/home/group/L2-3-Model/Network-Parameters",
+  "components": {
+    "biophysical_neuron_models_dir": "/home/group/L2-3-Model/Network-Parameters/components/biophysical_neuron_models",
+    "mechanisms_dir": "/home/group/L2-3-Model/Network-Parameters/components/mechanisms",
+    "morphologies_dir": "/home/group/L2-3-Model/Network-Parameters/components/morphologies",
+    "point_neuron_models_dir": "/home/group/L2-3-Model/Network-Parameters/components/point_neuron_models",
+    "synaptic_models_dir": "/home/group/L2-3-Model/Network-Parameters/components/synaptic_models/synapses_STP",
+    "templates_dir": "/home/group/L2-3-Model/Network-Parameters/components/templates",
+    "__pycache___dir": "/home/group/L2-3-Model/Network-Parameters/components/__pycache__"
+  },
+  "networks": {
+    "nodes": [
+      {
+        "nodes_file": "/home/group/L2-3-Model/Network-Parameters/network/cortex_nodes.h5",
+        "node_types_file": "/home/group/L2-3-Model/Network-Parameters/network/cortex_node_types.csv"
+      },
+      {
+        "nodes_file": "/home/group/L2-3-Model/Network-Parameters/network/baseline_nodes.h5",
+        "node_types_file": "/home/group/L2-3-Model/Network-Parameters/network/baseline_node_types.csv"
+      },
+      {
+        "nodes_file": "/home/group/L2-3-Model/Network-Parameters/network/thalamus_nodes.h5",
+        "node_types_file": "/home/group/L2-3-Model/Network-Parameters/network/thalamus_node_types.csv"
+      },
+      {
+        "nodes_file": "/home/group/L2-3-Model/Network-Parameters/network/shell_nodes.h5",
+        "node_types_file": "/home/group/L2-3-Model/Network-Parameters/network/shell_node_types.csv"
+      }
+    ],
+    "edges": [
+      {
+        "edge_types_file": "/home/group/L2-3-Model/Network-Parameters/network/cortex_cortex_edge_types.csv",
+        "edges_file": "/home/group/L2-3-Model/Network-Parameters/network/cortex_cortex_edges.h5"
+      },
+      {
+        "edge_types_file": "/home/group/L2-3-Model/Network-Parameters/network/baseline_cortex_edge_types.csv",
+        "edges_file": "/home/group/L2-3-Model/Network-Parameters/network/baseline_cortex_edges.h5"
+      },
+      {
+        "edge_types_file": "/home/group/L2-3-Model/Network-Parameters/network/thalamus_cortex_edge_types.csv",
+        "edges_file": "/home/group/L2-3-Model/Network-Parameters/network/thalamus_cortex_edges.h5"
+      },
+      {
+        "edge_types_file": "/home/group/L2-3-Model/Network-Parameters/network/shell_cortex_edge_types.csv",
+        "edges_file": "/home/group/L2-3-Model/Network-Parameters/network/shell_cortex_edges.h5"
+      }
+    ],
+    "gap_juncs": [
+      {
+        "gap_juncs_file": "/home/group/L2-3-Model/Network-Parameters/network/cortex_gap_juncs.h5"
+      }
+    ]
+  },
+  "node_sets": {
+    "biophysical_nodes": {
+      "model_type": "biophysical"
+    },
+    "point_nodes": {
+      "model_type": "point_process"
+    }
+  }
+}

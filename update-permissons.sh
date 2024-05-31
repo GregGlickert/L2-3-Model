@@ -1,0 +1,1 @@
+chmod -R ug+rwx ./

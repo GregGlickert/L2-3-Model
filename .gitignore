@@ -1,6 +1,7 @@
 # Mac Stuff
 .DS_Store
-
+*.out
+*.error
 # repo stuff
 Modeling-paper/
 

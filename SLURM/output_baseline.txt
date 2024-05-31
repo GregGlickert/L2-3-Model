@@ -1,0 +1,17 @@
+/home/gjgpb9/miniconda3/envs/bmtk/bin/nrniv:10: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import working_set
+/home/gjgpb9/miniconda3/envs/bmtk/bin/nrniv:10: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import working_set
+/home/gjgpb9/miniconda3/envs/bmtk/bin/nrniv:10: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import working_set
+/home/gjgpb9/miniconda3/envs/bmtk/bin/nrniv:10: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import working_set
+numprocs=4
+NEURON -- VERSION 8.2.3 HEAD (f0ed37010) 2023-09-14
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2022
+See http://neuron.yale.edu/neuron/credits
+
+I am 2 of 4
+I am 0 of 4
+I am 1 of 4
+I am 3 of 4

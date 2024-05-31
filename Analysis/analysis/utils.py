@@ -10,7 +10,7 @@ import copy
 ROOT_DIR_NAME = 'L2-3-Model'
 
 STIMULUS_CONFIG = {
-    'baseline': 'simulation_config_baseline.json',
+    'baseline': 'sonata_config.json',
     'short': 'config_short.json',
     'long': 'config_long.json',
     'const': 'config_const.json',
@@ -71,8 +71,11 @@ class ConfigHelper(object):
 
 
 def stimulus_type_from_trial_name(trial_name):
-    stim_type = next(s for s in trial_name.split('_') if s in STIMULUS_CONFIG)
+    parts = trial_name.replace('/', '_').split('_')
+    # Find the stim_type in the split parts
+    stim_type = next((s for s in parts if s in STIMULUS_CONFIG), None)
     return stim_type, STIMULUS_CONFIG[stim_type]
+
 
 
 def get_trial_info(TRIAL_PATH):

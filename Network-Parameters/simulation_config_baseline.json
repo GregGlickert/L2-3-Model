@@ -2,7 +2,7 @@
   "manifest": {
     "$BASE_DIR": "${configdir}",
     "$INPUT_DIR": "$BASE_DIR/input",
-    "$OUTPUT_DIR": "../Run-Storage/baseline"
+    "$OUTPUT_DIR": "../Run-Storage/baseline/baseline_run1"
   },
   "target_simulator": "NEURON",
   "run": {

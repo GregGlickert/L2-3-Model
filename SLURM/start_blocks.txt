@@ -1,0 +1,28 @@
+Updating JSON file with parameter value for block: block1
+JSON file 'test.json' modified successfully with initW=100.
+Submitting block: block1
+Submitted baseline with job ID 9607
+Submitted short with job ID 9608
+Submitted long with job ID 9609
+Waiting for block block1 to complete...
+Waiting for block block1 to complete...
+Block block1 completed.
+Updating JSON file with parameter value for block: block2
+JSON file 'test.json' modified successfully with initW=200.
+Submitting block: block2
+Submitted baseline with job ID 9610
+Submitted short with job ID 9611
+Submitted long with job ID 9612
+Waiting for block block2 to complete...
+Waiting for block block2 to complete...
+Block block2 completed.
+Updating JSON file with parameter value for block: block3
+JSON file 'test.json' modified successfully with initW=300.
+Submitting block: block3
+Submitted baseline with job ID 9613
+Submitted short with job ID 9614
+Submitted long with job ID 9615
+Waiting for block block3 to complete...
+Waiting for block block3 to complete...
+Block block3 completed.
+All blocks are done!

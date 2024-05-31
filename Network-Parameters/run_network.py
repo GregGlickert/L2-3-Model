@@ -2,6 +2,7 @@ import sys
 import os
 import warnings
 import synapses
+import pathlib
 from bmtk.simulator import bionet
 from bmtk.simulator.bionet.pyfunction_cache import add_weight_function
 from neuron import h
@@ -39,12 +40,15 @@ def run(config_file=CONFIG, use_coreneuron=USE_CORENEURON):
 
     warnings.simplefilter(action='ignore', category=FutureWarning)
 
-    # want to put report in output file so hope this wont get overwritten
     with open(config_file, 'r') as json_file:
         conf_dict = json.load(json_file)
-        output_dir = conf_dict['manifest']['$OUTPUT_DIR']
-        output_dir = output_dir + "/synaptic_report.json"
-        syn_data = get_synaptic_params('components/synaptic_models/synapses_STP')
+        if os.environ.get("OUTPUT_DIR"):
+            output_dir = os.path.abspath(os.environ.get('OUTPUT_DIR'))
+            pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
+            print(f"Output directory updated to {output_dir}")
+            conf_dict['manifest']['$OUTPUT_DIR'] = output_dir
+            synaptic_report_dir = output_dir + "/synaptic_report.json"
+            syn_data = get_synaptic_params('components/synaptic_models/synapses_STP')
 
     # register synaptic weight function
     synapses.load(randseed=1111)
@@ -52,9 +56,9 @@ def run(config_file=CONFIG, use_coreneuron=USE_CORENEURON):
 
     if use_coreneuron:
         import corebmtk
-        conf = corebmtk.Config.from_json(config_file, validate=True)
+        conf = corebmtk.Config.from_json(conf_dict, validate=True)
     else:
-        conf = bionet.Config.from_json(config_file, validate=True)
+        conf = bionet.Config.from_json(conf_dict, validate=True)
 
     conf.build_env()
     graph = bionet.BioNetwork.from_config(conf)
@@ -95,9 +99,7 @@ def run(config_file=CONFIG, use_coreneuron=USE_CORENEURON):
     sim.run()
     # must be ran after sim.run since that creates dir
     if pc.id() == 0:
-        print(output_dir)
-        print(syn_data)
-        save_synaptic_params(syn_data,output_dir)
+        save_synaptic_params(syn_data,synaptic_report_dir)
 
     bionet.nrn.quit_execution()
 

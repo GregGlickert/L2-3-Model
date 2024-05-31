@@ -1,61 +1,83 @@
-from job import SlurmJob
 from submit import submit_job
 from monitor import check_job_status
 import time
 
+import os
+import subprocess
+
 class SimulationBlock:
-    """
-    Class to represent a block of SLURM jobs.
+    def __init__(self, block_name, time, partition, nodes, ntasks, simulation_cases, output_base_dir):
+        """
+        Initializes the SimulationBlock instance.
 
-    Attributes:
-        block_name (str): The name of the block.
-        base_output_file (str): The base name for the output files.
-        time (str): The maximum runtime for the jobs.
-        partition (str): The partition to run the jobs on.
-        nodes (int): The number of nodes required.
-        ntasks (int): The number of tasks (or cores) required.
-        simulation_cases (dict): Dictionary of simulation cases and their corresponding commands.
-    """
-
-    def __init__(self, block_name, base_output_file, time, partition, nodes, ntasks, simulation_cases):
+        Args:
+            block_name (str): Name of the block.
+            time (str): Time limit for the job.
+            partition (str): Partition to submit the job to.
+            nodes (int): Number of nodes to request.
+            ntasks (int): Number of tasks.
+            simulation_cases (dict): Dictionary of simulation cases with their commands.
+            output_base_dir (str): Base directory for the output files.
+        """
         self.block_name = block_name
-        self.base_output_file = base_output_file
         self.time = time
         self.partition = partition
         self.nodes = nodes
         self.ntasks = ntasks
         self.simulation_cases = simulation_cases
+        self.output_base_dir = output_base_dir
         self.job_ids = []
 
-    def create_jobs(self):
+    def create_batch_script(self, case_name, command):
         """
-        Creates SLURM jobs for each simulation case.
+        Creates a SLURM batch script for the given simulation case.
 
+        Args:
+            case_name (str): Name of the simulation case.
+            command (str): Command to run the simulation.
+        
         Returns:
-            list: A list of SlurmJob instances.
+            str: Path to the batch script file.
         """
-        jobs = []
-        for case_name, command in self.simulation_cases.items():
-            job_name = f"{self.block_name}_{case_name}"
-            output_file = f"{self.base_output_file}_{case_name}.txt"
-            job = SlurmJob(job_name, output_file, self.time, self.partition, self.nodes, self.ntasks, [command])
-            jobs.append(job)
-        return jobs
+        block_output_dir = os.path.join(self.output_base_dir, self.block_name)  # Create block-specific output folder
+        case_output_dir = os.path.join(block_output_dir, case_name)  # Create case-specific output folder
+        os.makedirs(case_output_dir, exist_ok=True)
+
+        batch_script_path = os.path.join(case_output_dir, 'script.sh')
+
+        # Write the batch script to the file
+        with open(batch_script_path, 'w') as script_file:
+            script_file.write(f"""#!/bin/bash
+#SBATCH --job-name={self.block_name}_{case_name}
+#SBATCH --output={case_output_dir}/%x_%j.out
+#SBATCH --error={case_output_dir}/%x_%j.err
+#SBATCH --time={self.time}
+#SBATCH --partition={self.partition}
+#SBATCH --nodes={self.nodes}
+#SBATCH --ntasks={self.ntasks}
+
+export OUTPUT_DIR={case_output_dir}
+
+{command}
+""")
+
+        #print(f"Batch script created: {batch_script_path}", flush=True)
+
+        return batch_script_path
 
     def submit_block(self):
         """
-        Submits all SLURM jobs in the block.
-
-        Returns:
-            list: A list of job IDs for the submitted jobs.
+        Submits all simulation cases in the block as separate SLURM jobs.
         """
-        jobs = self.create_jobs()
-        self.job_ids = []
-        for job in jobs:
-            script_path = job.save_script()
-            job_id = submit_job(script_path)
-            self.job_ids.append(job_id)
-        return self.job_ids
+        for case_name, command in self.simulation_cases.items():
+            script_path = self.create_batch_script(case_name, command)
+            result = subprocess.run(['sbatch', script_path], capture_output=True, text=True)
+            if result.returncode == 0:
+                job_id = result.stdout.strip().split()[-1]
+                self.job_ids.append(job_id)
+                print(f"Submitted {case_name} with job ID {job_id}", flush=True)
+            else:
+                print(f"Failed to submit {case_name}: {result.stderr}", flush=True)
 
     def check_block_status(self):
         """
@@ -64,10 +86,9 @@ class SimulationBlock:
         Returns:
             bool: True if all jobs in the block are completed, False otherwise.
         """
-
         for job_id in self.job_ids:
             status = check_job_status(job_id)
-            if status not in ['COMPLETED', 'FAILED', 'CANCELLED']: # could throw an error if failed or cancelled
+            if status not in ['COMPLETED', 'FAILED', 'CANCELLED']: # could add RUNNING in this list 
                 return False
         return True
 
@@ -78,20 +99,40 @@ class SequentialBlockRunner:
 
     Attributes:
         blocks (list): List of SimulationBlock instances to be run.
-        checkDone (int): interval in seconds to check if jobs are complete or not
+        json_editor (seedSweep): Instance of seedSweep to edit JSON file.
+        param_values (list): List of values for the parameter to be modified.
+        check_interval (int): Time interval (in seconds) to check job status.
     """
 
-    def __init__(self, blocks,checkDone=60):
+    def __init__(self, blocks, json_editor=None, param_values=None, check_interval=60):
         self.blocks = blocks
-        self.checkDone = checkDone
+        self.json_editor = json_editor
+        self.param_values = param_values
+        self.check_interval = check_interval
+
     def submit_blocks_sequentially(self):
         """
         Submits all blocks sequentially, ensuring each block starts only after the previous block has completed.
+        Updates the JSON file with new parameters before each block run.
         """
-        for block in self.blocks:
-            print(f"Submitting block: {block.block_name}")
+        for i, block in enumerate(self.blocks):
+            # Update JSON file with new parameter value
+            if self.json_editor == None and self.param_values == None:
+                print(f"skipping json editing for block {block.block_name}",flush=True)
+            else:
+                new_value = self.param_values[i]
+                print(f"Updating JSON file with parameter value for block: {block.block_name}", flush=True)
+                self.json_editor.edit_json(new_value)
+
+            # Submit the block
+            print(f"Submitting block: {block.block_name}", flush=True)
             block.submit_block()
+            
+            # Wait for the block to complete
             while not block.check_block_status():
-                print(f"Waiting for block {block.block_name} to complete...")
-                time.sleep(self.checkDone)  # don't want this to constantly run we we will wait a bit 
-            print(f"Block {block.block_name} completed.")
+                print(f"Waiting for block {block.block_name} to complete...", flush=True)
+                time.sleep(self.check_interval)
+            
+            print(f"Block {block.block_name} completed.", flush=True)
+        print("All blocks are done!",flush=True)
+

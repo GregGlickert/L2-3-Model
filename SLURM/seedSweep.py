@@ -28,3 +28,7 @@ class seedSweep:
             json.dump(data, f, indent=4)
         
         print(f"JSON file '{self.json_file_path}' modified successfully with {self.param_name}={new_value}.", flush=True)
+        
+    
+    def change_json_file_path(self,new_json_file_path):
+        self.json_file_path = new_json_file_path

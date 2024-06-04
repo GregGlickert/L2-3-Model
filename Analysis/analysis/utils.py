@@ -11,8 +11,8 @@ ROOT_DIR_NAME = 'L2-3-Model'
 
 STIMULUS_CONFIG = {
     'baseline': 'sonata_config.json',
-    'short': 'config_short.json',
-    'long': 'config_long.json',
+    'short': 'sonata_config.json',
+    'long': 'sonata_config.json',
     'const': 'config_const.json',
     'ramp': 'config.json',
     'join': 'config.json',

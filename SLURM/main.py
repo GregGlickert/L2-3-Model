@@ -16,6 +16,7 @@ block_params = {
     'partition': 'batch',
     'nodes': 1,
     'ntasks': 2,
+    'mem': 1,
     'output_base_dir': 'output_test/'
 }
 

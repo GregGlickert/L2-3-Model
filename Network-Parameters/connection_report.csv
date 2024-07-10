@@ -16,3 +16,20 @@ shell: pop_name=='['PN']',cortex: pop_name=='['LTS']',4.831557691106655,0.466839
 shell: pop_name=='['LTS']',cortex: pop_name=='['PN']',9.136405329409488,0.7279693486590039
 cortex: pop_name=='FSI'Gap,cortex: pop_name=='FSI'Gap,19.470555786961466,4.270493827160494
 cortex: pop_name=='LTS'Gap,cortex: pop_name=='LTS'Gap,9.763623340128932,2.215
+cortex: pop_name=='['PN']',cortex: pop_name=='['PN']',[2.82512868 0.01397776],[1.35827741 0.00672029]
+cortex: pop_name=='['FSI']',cortex: pop_name=='['FSI']',[12.12610746  1.07678799],[5.32517612 0.47287109]
+cortex: pop_name=='['LTS']',cortex: pop_name=='['LTS']',5.0305801972560475,2.2825
+cortex: pop_name=='['FSI']',cortex: pop_name=='['LTS']',[11.49190908 17.83930409  4.92064977],[5.11916667 7.94666667 2.19194444]
+cortex: pop_name=='['PN']',cortex: pop_name=='['FSI']',[19.07499943 10.8938497   2.75347957],[9.2016092  4.77637292 1.20725415]
+cortex: pop_name=='['PN']',cortex: pop_name=='['LTS']',[ 9.54280648 17.81662961  1.86982155],[4.67689655 7.93522989 0.83278736]
+shell: pop_name=='['PN']',cortex: pop_name=='['PN']',0.5527407924726706,0.055141145902144716
+shell: pop_name=='['FSI']',cortex: pop_name=='['FSI']',4.551632785199903,0.37897119341563784
+shell: pop_name=='['LTS']',cortex: pop_name=='['LTS']',3.5666036206430696,0.27499999999999997
+shell: pop_name=='['FSI']',cortex: pop_name=='['LTS']',7.782836724108121,0.6251851851851852
+shell: pop_name=='['LTS']',cortex: pop_name=='['FSI']',12.157231964222667,0.9564814814814814
+shell: pop_name=='['PN']',cortex: pop_name=='['FSI']',9.931979672795814,0.9861132396764581
+shell: pop_name=='['FSI']',cortex: pop_name=='['PN']',5.7344269996065,0.48017879948914427
+shell: pop_name=='['PN']',cortex: pop_name=='['LTS']',4.831557691106655,0.46683908045977013
+shell: pop_name=='['LTS']',cortex: pop_name=='['PN']',9.136405329409488,0.7279693486590039
+cortex: pop_name=='FSI'Gap,cortex: pop_name=='FSI'Gap,19.470555786961466,4.270493827160494
+cortex: pop_name=='LTS'Gap,cortex: pop_name=='LTS'Gap,9.763623340128932,2.215

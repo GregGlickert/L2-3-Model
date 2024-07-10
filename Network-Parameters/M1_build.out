@@ -1,4 +1,4 @@
-Started running at Fri May 24 15:50:31 CDT 2024.
+Started running at Wed Jul 10 10:46:03 CDT 2024.
 numprocs=1
 Cell numbers: PN=8700, FSI=900, LTS=400
 Number of positions in core: 12165
@@ -34,23 +34,23 @@ Shell edges:
 
 Shell edge parameters:
 shellPN2PN:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935c3fa0>, 'p_arg': <function cylindrical_dist_z at 0x7fef96fac8b0>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 1, 'afferent_section_pos': 0.4, 'dynamics_params': 'PN2PN.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313fa8b0>, 'p_arg': <function cylindrical_dist_z at 0x7f3834fdb0d0>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 1, 'afferent_section_pos': 0.4, 'dynamics_params': 'PN2PN.json'}
 shellFSI2FSI:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935c3fd0>, 'p_arg': <function spherical_dist at 0x7fef96fac820>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'FSI2FSI.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313fa910>, 'p_arg': <function spherical_dist at 0x7f3834fdb040>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'FSI2FSI.json'}
 shellLTS2LTS:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935cc040>, 'p_arg': <function spherical_dist at 0x7fef96fac820>}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'LTS2LTS.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313fa8e0>, 'p_arg': <function spherical_dist at 0x7f3834fdb040>}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'LTS2LTS.json'}
 shellFSI2LTS:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935cc070>, 'p_arg': <function spherical_dist at 0x7fef96fac820>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'FSI2LTS.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313fa940>, 'p_arg': <function spherical_dist at 0x7f3834fdb040>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'FSI2LTS.json'}
 shellLTS2FSI:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935cc0a0>, 'p_arg': <function spherical_dist at 0x7fef96fac820>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'LTS2FSI.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313fa970>, 'p_arg': <function spherical_dist at 0x7f3834fdb040>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'LTS2FSI.json'}
 shellPN2FSI:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935cc100>, 'p_arg': <function cylindrical_dist_z at 0x7fef96fac8b0>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 1, 'afferent_section_pos': 0.5, 'dynamics_params': 'PN2FSI.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313fa9d0>, 'p_arg': <function cylindrical_dist_z at 0x7f3834fdb0d0>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 1, 'afferent_section_pos': 0.5, 'dynamics_params': 'PN2FSI.json'}
 shellFSI2PN:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935cc130>, 'p_arg': <function spherical_dist at 0x7fef96fac820>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'FSI2PN.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313faa00>, 'p_arg': <function spherical_dist at 0x7f3834fdb040>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 0, 'afferent_section_pos': 0.5, 'dynamics_params': 'FSI2PN.json'}
 shellPN2LTS:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935cc220>, 'p_arg': <function cylindrical_dist_z at 0x7fef96fac8b0>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 1, 'afferent_section_pos': 0.5, 'dynamics_params': 'PN2LTS.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313faaf0>, 'p_arg': <function cylindrical_dist_z at 0x7f3834fdb0d0>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 1, 'afferent_section_pos': 0.5, 'dynamics_params': 'PN2LTS.json'}
 shellLTS2PN:
-{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7fef935cc1f0>, 'p_arg': <function spherical_dist at 0x7fef96fac820>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 2, 'afferent_section_pos': 0.8, 'dynamics_params': 'LTS2PN.json'}
+{'connector_class': <class 'bmtool.connectors.UnidirectionConnector'>, 'connector_params': {'p': <bmtool.connectors.GaussianDropoff object at 0x7f38313faac0>, 'p_arg': <function spherical_dist at 0x7f3834fdb040>, 'n_syn': 1, 'verbose': True}, 'weight_function': 'lognormal_weight', 'syn_weight': 1.0, 'weight_sigma': 0.8, 'sigma_upper_bound': 3.0, 'afferent_section_id': 2, 'afferent_section_pos': 0.8, 'dynamics_params': 'LTS2PN.json'}
 
 Adding edge: shellPN2PN
 Adding edge: shellFSI2FSI
@@ -66,10 +66,10 @@ Building cortex
 Start building connection between: 
   cortex: pop_name=='['PN']'
   cortex: pop_name=='['PN']'
-Output of p0_arg, p0 will be cached.
+Output of p0, p0_arg will be cached.
 Estimated value of rho=-0.045
-Time for estimating rho: 217.411 sec
-Total time for creating connection matrix: 292.094 sec
+Time for estimating rho: 200.616 sec
+Total time for creating connection matrix: 276.422 sec
 Numbers of (all, reciprocal) connections:
 Number of connected pairs: (513981, 2543)
 Number of possible connections: (18193189)
@@ -79,15 +79,15 @@ Fraction of connected pairs in all pairs: (1.36%, 0.01%)
 
 Assigning forward connections.
 Done! 
-Time for building connections: 14.274 sec
+Time for building connections: 13.586 sec
 
 Start building connection between: 
   cortex: pop_name=='['FSI']'
   cortex: pop_name=='['FSI']'
-Output of p0_arg, p0 will be cached.
+Output of p0, p0_arg will be cached.
 Estimated value of rho=0.071
-Time for estimating rho: 1.954 sec
-Total time for creating connection matrix: 2.712 sec
+Time for estimating rho: 1.801 sec
+Total time for creating connection matrix: 2.569 sec
 Numbers of (all, reciprocal) connections:
 Number of connected pairs: (21543, 1913)
 Number of possible connections: (177658)
@@ -97,7 +97,7 @@ Fraction of connected pairs in all pairs: (5.33%, 0.47%)
 
 Assigning forward connections.
 Done! 
-Time for building connections: 0.181 sec
+Time for building connections: 0.173 sec
 
 Start building connection 
   from cortex: pop_name=='['LTS']'
@@ -109,15 +109,15 @@ Number of total pairs: 160000
 Fraction of connected pairs in all pairs: 2.28%
 
 Done! 
-Time for building connections: 0.841 sec
+Time for building connections: 0.773 sec
 
 Start building connection between: 
   cortex: pop_name=='['FSI']'
   cortex: pop_name=='['LTS']'
-Output of p0_arg, p1, p0, p1_arg will be cached.
+Output of p1_arg, p0, p0_arg, p1 will be cached.
 Estimated value of rho=0.166
-Time for estimating rho: 3.146 sec
-Total time for creating connection matrix: 4.632 sec
+Time for estimating rho: 2.947 sec
+Total time for creating connection matrix: 4.437 sec
 Numbers of (forward, backward, reciprocal) connections:
 Number of connected pairs: (18429, 28608, 7891)
 Number of possible connections: (160365, 160365, 160365)
@@ -128,12 +128,12 @@ Fraction of connected pairs in all pairs: (5.12%, 7.95%, 2.19%)
 Assigning forward connections.
 Assigning backward connections.
 Done! 
-Time for building connections: 0.786 sec
+Time for building connections: 0.798 sec
 
 Start building connection between: 
   cortex: pop_name=='['PN']'
   cortex: pop_name=='['FSI']'
-Total time for creating connection matrix: 116.264 sec
+Total time for creating connection matrix: 107.133 sec
 Numbers of (forward, backward, reciprocal) connections:
 Number of connected pairs: (720486, 373990, 94528)
 Number of possible connections: (3777122, 3433038, 3433038)
@@ -144,15 +144,15 @@ Fraction of connected pairs in all pairs: (9.20%, 4.78%, 1.21%)
 Assigning forward connections.
 Assigning backward connections.
 Done! 
-Time for building connections: 17.515 sec
+Time for building connections: 17.414 sec
 
 Start building connection between: 
   cortex: pop_name=='['PN']'
   cortex: pop_name=='['LTS']'
-Output of p0_arg, p1, p0, p1_arg will be cached.
+Output of p1_arg, p0, p0_arg, p1 will be cached.
 Estimated value of rho=-0.221
-Time for estimating rho: 32.737 sec
-Total time for creating connection matrix: 47.549 sec
+Time for estimating rho: 30.103 sec
+Total time for creating connection matrix: 44.885 sec
 Numbers of (forward, backward, reciprocal) connections:
 Number of connected pairs: (162756, 276146, 28981)
 Number of possible connections: (1705536, 1549934, 1549934)
@@ -163,23 +163,23 @@ Fraction of connected pairs in all pairs: (4.68%, 7.94%, 0.83%)
 Assigning forward connections.
 Assigning backward connections.
 Done! 
-Time for building connections: 7.251 sec
+Time for building connections: 7.276 sec
 
 Start building connection from thalamus: *
   0. to cortex: pop_name=='['PN']'
-    Time for this partition: 25.620 sec
+    Time for this partition: 25.719 sec
 Done! 
-Time for building connections: 25.620 sec
+Time for building connections: 25.719 sec
 
 Start building connection from baseline: *
   0. to cortex: pop_name=='['PN']'
-    Time for this partition: 29.614 sec
+    Time for this partition: 29.710 sec
   1. to cortex: pop_name=='['FSI']'
-    Time for this partition: 3.053 sec
+    Time for this partition: 3.041 sec
   2. to cortex: pop_name=='['LTS']'
-    Time for this partition: 1.347 sec
+    Time for this partition: 1.338 sec
 Done! 
-Time for building connections: 34.142 sec
+Time for building connections: 34.216 sec
 
 Start building connection 
   from shell: pop_name=='['PN']'
@@ -191,7 +191,7 @@ Number of total pairs: 227070000
 Fraction of connected pairs in all pairs: 0.06%
 
 Done! 
-Time for building connections: 1064.974 sec
+Time for building connections: 1067.698 sec
 
 Start building connection 
   from shell: pop_name=='['FSI']'
@@ -203,7 +203,7 @@ Number of total pairs: 2430000
 Fraction of connected pairs in all pairs: 0.38%
 
 Done! 
-Time for building connections: 10.527 sec
+Time for building connections: 9.509 sec
 
 Start building connection 
   from shell: pop_name=='['LTS']'
@@ -215,7 +215,7 @@ Number of total pairs: 480000
 Fraction of connected pairs in all pairs: 0.28%
 
 Done! 
-Time for building connections: 2.093 sec
+Time for building connections: 1.872 sec
 
 Start building connection 
   from shell: pop_name=='['FSI']'
@@ -227,7 +227,7 @@ Number of total pairs: 1080000
 Fraction of connected pairs in all pairs: 0.63%
 
 Done! 
-Time for building connections: 4.671 sec
+Time for building connections: 4.239 sec
 
 Start building connection 
   from shell: pop_name=='['LTS']'
@@ -239,7 +239,7 @@ Number of total pairs: 1080000
 Fraction of connected pairs in all pairs: 0.96%
 
 Done! 
-Time for building connections: 4.677 sec
+Time for building connections: 4.252 sec
 
 Start building connection 
   from shell: pop_name=='['PN']'
@@ -251,7 +251,7 @@ Number of total pairs: 23490000
 Fraction of connected pairs in all pairs: 0.99%
 
 Done! 
-Time for building connections: 111.123 sec
+Time for building connections: 100.826 sec
 
 Start building connection 
   from shell: pop_name=='['FSI']'
@@ -263,7 +263,7 @@ Number of total pairs: 23490000
 Fraction of connected pairs in all pairs: 0.48%
 
 Done! 
-Time for building connections: 102.118 sec
+Time for building connections: 92.414 sec
 
 Start building connection 
   from shell: pop_name=='['PN']'
@@ -275,7 +275,7 @@ Number of total pairs: 10440000
 Fraction of connected pairs in all pairs: 0.47%
 
 Done! 
-Time for building connections: 48.659 sec
+Time for building connections: 44.864 sec
 
 Start building connection 
   from shell: pop_name=='['LTS']'
@@ -287,7 +287,7 @@ Number of total pairs: 10440000
 Fraction of connected pairs in all pairs: 0.73%
 
 Done! 
-Time for building connections: 45.139 sec
+Time for building connections: 41.044 sec
 
 Start building gap junction 
   in cortex: pop_name=='FSI'
@@ -298,7 +298,7 @@ Number of total pairs: 404550
 Fraction of connected pairs in all pairs: 8.55%
 
 Done! 
-Time for building connections: 2.791 sec
+Time for building connections: 2.593 sec
 
 Start building gap junction 
   in cortex: pop_name=='LTS'
@@ -309,8 +309,8 @@ Number of total pairs: 79800
 Fraction of connected pairs in all pairs: 4.44%
 
 Done! 
-Time for building connections: 0.556 sec
+Time for building connections: 0.513 sec
 Building thalamus
 Building baseline
 Building shell
-Done running simulation at Fri May 24 16:36:14 CDT 2024
+Done running simulation at Wed Jul 10 11:30:34 CDT 2024

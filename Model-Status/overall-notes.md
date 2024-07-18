@@ -1,3 +1,0 @@
-currently the best performing model is the LTS2PNR4 block1. However the power of both beta and gamma is still fairly weak. You can see in the spike rate residuals that there is some beta and gamma, but i think it would need to be cleaned up and increased slightly still. The FSI2LTS and LTS2FSI syns could be helpful when it comes to this. Also during baseline the LTS is firing more than the FSI which i think may be a slight issue. 
-
-LTS2FSI block results look decent things are very close not perfect but things are almost there.

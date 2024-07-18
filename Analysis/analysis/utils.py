@@ -36,7 +36,6 @@ class ConfigHelper(object):
         while True:
             path = abs_path
             abs_path, tail = os.path.split(abs_path)
-            print(abs_path,tail)
             if tail == '':
                 raise NotADirectoryError("Root directory not found")
             if self.root_dir_name in tail:

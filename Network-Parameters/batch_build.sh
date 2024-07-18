@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH -J V1_build
+#SBATCH -J  M1_build
 #SBATCH -o  M1_build.out
 #SBATCH -e  M1_build.error
 #SBATCH -t 0-48:00:00  # days-hours:minutes

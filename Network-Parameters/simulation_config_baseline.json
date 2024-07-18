@@ -45,6 +45,10 @@
       "file_name": "ecp.h5",
       "electrode_channels": "all",
       "tmp_dir": "$OUTPUT_DIR"
+    },
+    "save_synapses_mod": {
+      "module": "save_synapses",
+      "network_dir": "updated_conns"
     }
   },
   "node_sets_file": "$BASE_DIR/node_sets.json",

@@ -17,8 +17,8 @@ echo "Started running at $START."
 export HDF5_USE_FILE_LOCKING=FALSE
 unset DISPLAY
 
-export OUTPUT_DIR=../Run-Storage/baseline/baseline_run3
-mpirun ./components/mechanisms/x86_64/special -mpi -python run_network.py simulation_config_baseline.json True # args: config file, whether use coreneuron
+export OUTPUT_DIR=../Run-Storage/syn-weight-check/block1
+mpirun nrniv -mpi -python run_network.py simulation_config_baseline.json False # args: config file, whether use coreneuron
 
 END=$(date)
 echo "Done running simulation at $END"

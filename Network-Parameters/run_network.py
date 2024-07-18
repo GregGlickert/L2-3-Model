@@ -45,7 +45,6 @@ def run(config_file=CONFIG, use_coreneuron=USE_CORENEURON):
         if os.environ.get("OUTPUT_DIR"):
             output_dir = os.path.abspath(os.environ.get('OUTPUT_DIR'))
             pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
-            print(f"Output directory updated to {output_dir}")
             conf_dict['manifest']['$OUTPUT_DIR'] = output_dir
             synaptic_report_dir = output_dir + "/synaptic_report.json"
             syn_data = get_synaptic_params('components/synaptic_models/synapses_STP')

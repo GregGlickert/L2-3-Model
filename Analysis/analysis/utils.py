@@ -17,7 +17,7 @@ STIMULUS_CONFIG = {
     'ramp': 'config.json',
     'join': 'config.json',
     'fade': 'config.json',
-    'else': 'config.json'
+    'else': 'sonata_config.json'
 }
 
 

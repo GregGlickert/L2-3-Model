@@ -24,7 +24,7 @@ t_sim = 31000.0  # ms
 dt = 0.1  # ms
 
 # Network size and dimensions
-num_cells = 10000  # 10000 3000 is roughly only many cells are in 400x200
+num_cells = 3000  # 10000 3000 is roughly only many cells are in 400x200
 column_width, column_height = 600., 250.
 x_start, x_end = - column_width / 2, column_width / 2
 y_start, y_end = - column_width / 2, column_width / 2
@@ -148,19 +148,19 @@ import matplotlib.pyplot as plt
 
 markersize = 0.5
 
-plt.figure()
-plt.plot(pos_list[:, 0], pos_list[:, 1], 'b.', markersize=markersize)
+#plt.figure()
+#plt.plot(pos_list[:, 0], pos_list[:, 1], 'b.', markersize=markersize)
 #plt.plot(shell_pos_list[:, 0], shell_pos_list[:, 1], 'r.', markersize=markersize)
-plt.xlabel('x')
-plt.ylabel('y')
+#plt.xlabel('x')
+#plt.ylabel('y')
 
-plt.figure()
-plt.plot(pos_list[:, 0], pos_list[:, 2], 'b.', markersize=markersize)
+#plt.figure()
+#plt.plot(pos_list[:, 0], pos_list[:, 2], 'b.', markersize=markersize)
 #plt.plot(shell_pos_list[:, 0], shell_pos_list[:, 2], 'r.', markersize=markersize)
-plt.xlabel('x')
-plt.ylabel('z')
+#plt.xlabel('x')
+#plt.ylabel('z')
 
-plt.show()
+#plt.show()
 
 # %%
 ##############################################################################
@@ -746,7 +746,7 @@ edge_params = {
         'afferent_section_pos': 0.8,  # end of apic
         'dynamics_params': 'LTS2PN.json'
     },
-    'Thal2PN': {
+    'Thal2PN': { # different syn for pulse vs baseline input makes more sense
         'connector_class': OneToOneSequentialConnector,
         'weight_function': 'lognormal_weight',
         'syn_weight': 1.,
@@ -755,7 +755,7 @@ edge_params = {
         'delay': 0.0,
         'afferent_section_id': 2,
         'afferent_section_pos': 0.8,  # end of apic
-        'dynamics_params': 'Thal2PN.json'
+        'dynamics_params': 'Pulse2PN.json'
     },
     'Base2PN': {
         'connector_class': OneToOneSequentialConnector,

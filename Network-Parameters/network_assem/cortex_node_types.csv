@@ -1,0 +1,4 @@
+node_type_id model_type morphology assembly_id model_template pop_name
+100 biophysical blank.swc NULL hoc:CP_Cell PN
+101 biophysical blank.swc -1 hoc:FSI_Cell FSI
+102 biophysical blank.swc -1 hoc:LTS_Cell LTS

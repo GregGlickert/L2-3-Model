@@ -1,0 +1,2 @@
+edge_type_id target_query source_query model_template afferent_section_id afferent_section_pos syn_weight weight_sigma weight_function dynamics_params sigma_upper_bound delay
+109 pop_name=='['PN']' * AMPA_NMDA_STP 2 0.8 1.0 0.3 lognormal_weight Pulse2PN.json 3.0 0.0

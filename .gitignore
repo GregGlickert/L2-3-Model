@@ -6,10 +6,9 @@
 Modeling-paper/
 Run-Storage/
 bmtool/
-network*
 updated_conns*
-
 network/
+network_10000/
 
 # Neuron stuff
 x86_64/

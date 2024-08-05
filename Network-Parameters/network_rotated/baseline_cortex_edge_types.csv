@@ -1,0 +1,4 @@
+edge_type_id target_query source_query model_template afferent_section_id afferent_section_pos syn_weight weight_sigma weight_function dynamics_params sigma_upper_bound delay
+110 pop_name=='['PN']' * AMPA_NMDA_STP 2 0.8 1.0 0.3 lognormal_weight Thal2PN.json 3.0 0.0
+111 pop_name=='['FSI']' * AMPA_NMDA_STP 1 0.5 1.0 0.6 lognormal_weight Base2FSI.json 3.0 0.0
+112 pop_name=='['LTS']' * AMPA_NMDA_STP 1 0.5 1.0 0.6 lognormal_weight Base2LTS.json 3.0 0.0

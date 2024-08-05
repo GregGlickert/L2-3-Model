@@ -1,0 +1,10 @@
+edge_type_id target_query source_query model_template afferent_section_id afferent_section_pos syn_weight weight_sigma weight_function dynamics_params sigma_upper_bound
+113 pop_name=='['PN']' pop_name=='['PN']' AMPA_NMDA_STP 1 0.4 1.0 0.8 lognormal_weight PN2PN.json 3.0
+114 pop_name=='['FSI']' pop_name=='['FSI']' GABA_AB_STP 0 0.5 1.0 0.8 lognormal_weight FSI2FSI.json 3.0
+115 pop_name=='['LTS']' pop_name=='['LTS']' GABA_AB_STP 0 0.5 1.0 0.8 lognormal_weight LTS2LTS.json 3.0
+116 pop_name=='['LTS']' pop_name=='['FSI']' GABA_AB_STP 0 0.5 1.0 0.8 lognormal_weight FSI2LTS.json 3.0
+117 pop_name=='['FSI']' pop_name=='['LTS']' GABA_AB_STP 0 0.5 1.0 0.8 lognormal_weight LTS2FSI.json 3.0
+118 pop_name=='['FSI']' pop_name=='['PN']' AMPA_NMDA_STP 1 0.5 1.0 0.8 lognormal_weight PN2FSI.json 3.0
+119 pop_name=='['PN']' pop_name=='['FSI']' GABA_AB_STP 0 0.5 1.0 0.8 lognormal_weight FSI2PN.json 3.0
+120 pop_name=='['LTS']' pop_name=='['PN']' AMPA_NMDA_STP 1 0.5 1.0 0.8 lognormal_weight PN2LTS.json 3.0
+121 pop_name=='['PN']' pop_name=='['LTS']' GABA_AB_STP 2 0.8 1.0 0.8 lognormal_weight LTS2PN.json 3.0

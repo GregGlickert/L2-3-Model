@@ -12,21 +12,21 @@ simulation_cases = {
 # Define block parameters
 # could add other params like account to allow working on Expanse
 block_params = {
-    'time': '02:00:00',
+    'time': '02:30:00',
     'partition': 'shared',
     'nodes': 1,
     'ntasks': 24,
-    'mem': '96G',
-    'output_base_dir': '../Run-Storage/LTS2FSI',
+    'mem': '144G',
+    'output_base_dir': '../Run-Storage/FSI2PNR3_L5_CP',
     'account':'umc113'
 }
 
 # Define the parameter to be changed and its values
 param_name = 'initW'
-param_values = [0.7,0.8,0.9,1.2,1.4,1.6,2,2.5,3] 
+param_values = [3.1,3.2,3.3,3.4,3.5,3.7,3.9,4,4.1,4.2,4.3] 
 
 # Define JSON file path and create seedSweep instance
-json_file_path = '/home/gglick9/L2-3-Model/Network-Parameters/components/synaptic_models/synapses_STP/LTS2FSI.json'
+json_file_path = '/home/gglick9/L2-3-Model/Network-Parameters/components/synaptic_models/synapses_STP/FSI2PN.json'
 json_editor = seedSweep(json_file_path, param_name)
 
 # Define the number of blocks to create

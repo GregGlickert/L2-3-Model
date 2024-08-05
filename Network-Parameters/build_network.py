@@ -13,18 +13,18 @@ from bmtool.connectors import (
     syn_dist_delay_feng_section_PN, syn_dist_delay_feng, syn_section_PN, syn_uniform_delay_section, CorrelatedGapJunction
 )
 from homogenousRules import homo_edge_probability_from_convergence
-
+from bmtk.builder.auxi.node_params import xiter_random
 # %%
 randseed = 1234
 rng = np.random.default_rng(randseed)
 connectors.rng = rng
 
-network_dir = 'network'
+network_dir = 'network_rotated'
 t_sim = 31000.0  # ms
 dt = 0.1  # ms
 
 # Network size and dimensions
-num_cells = 3000  # 10000 3000 is roughly only many cells are in 400x200
+num_cells = 10000  # 10000 3000 is roughly only many cells are in 400x200
 column_width, column_height = 600., 250.
 x_start, x_end = - column_width / 2, column_width / 2
 y_start, y_end = - column_width / 2, column_width / 2
@@ -36,6 +36,8 @@ max_conn_dist = 300  # or np.inf
 
 # When enabled, a shell of virtual cells will be created around the core cells.
 edge_effects = True
+# When enabled the cells will have a rotation applied to them with PN pointed upwardsa and interneuron randomly rotated
+rotate_cells = False
 
 ##############################################################################
 ####################### Cell Proportions and Positions #######################
@@ -48,7 +50,7 @@ def num_prop(ratio, N):
 
 
 # Number of cells in each population.
-# Following 87/13 E/I with 9% PV and 4% SOM from Dura-Bernal el al 2023 model paper need real source
+# Following 87/13 E/I with 9% PV and 4% SOM from Dura-Bernal el al 2023 model paper have real cite 
 num_PN, num_FSI, num_LTS = num_prop([87, 9, 4], num_cells)
 print('Cell numbers: ' + ', '.join(f'{c:s}={n:d}' for c, n in
     zip(['PN', 'FSI', 'LTS'], [num_PN, num_FSI, num_LTS])))
@@ -191,6 +193,15 @@ def build_networks(network_definitions: list) -> dict:
             if pos_list is not None:
                 extra_kwargs['positions'] = pos_list[num:num + num_cells]
                 num += num_cells
+            if rotate_cells:
+                if cell['pop_name'] == 'PN':
+                    extra_kwargs['rotation_angle_xaxis'] = np.zeros(num_cells)
+                    extra_kwargs['rotation_angle_yaxis'] = xiter_random(N=num_cells, min_x=0.33*np.pi, max_x=0.5*np.pi)
+                    extra_kwargs['rotation_angle_zaxis'] = xiter_random(N=num_cells, min_x=0.33*np.pi, max_x=0.5*np.pi) # rotated pointed upwards
+                else:
+                    extra_kwargs['rotation_angle_xaxis'] = np.zeros(num_cells)
+                    extra_kwargs['rotation_angle_yaxis'] = xiter_random(N=num_cells, min_x=0.0, max_x=2*np.pi)
+                    extra_kwargs['rotation_angle_zaxis'] = xiter_random(N=num_cells, min_x=0.0, max_x=2*np.pi) # random rotation 
 
             cell = {k: v for k, v in cell.items() if v is not None}
             extra_kwargs = {k: v for k, v in extra_kwargs.items()

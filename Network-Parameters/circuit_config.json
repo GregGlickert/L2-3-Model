@@ -1,7 +1,7 @@
 {
   "manifest": {
     "$BASE_DIR": "${configdir}",
-    "$NETWORK_DIR": "$BASE_DIR/network",
+    "$NETWORK_DIR": "$BASE_DIR/network_assem",
     "$COMPONENTS_DIR": "$BASE_DIR/components"
   },
   "components": {

@@ -147,7 +147,7 @@ def networkTest(num_cells,width,height,Pmax,sigma,plot=False):
     print(f"Number of connections: {num_connections}")
     print(f"Percent connectivity: {percent_connectivity:.2f}%")
 
-    # Optional: Visualization
+    # Visualization
     if plot:
         plt.figure(figsize=(10, 5))
         plt.scatter(cell_positions[:, 0], cell_positions[:, 1], c='blue', label='Cells')

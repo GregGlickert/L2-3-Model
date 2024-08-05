@@ -1,0 +1,4 @@
+We are currently using all the of the synaptic parameters from Ziao's M1L5 model except for the GABA-A rev for the PN cell was alter. Currently we use -75mV for the reversal potential where Ziao had set his to -90mV.The measured reversal potential for GABAA-mediated IPSPs was –73 mV (Beierlein et al 2003) so we could alter to -73 but would most likely not have much of an effect compared to -75mV. 
+
+
+Beierlein, M., Gibson, J. R., & Connors, B. W. (2003). Two Dynamically Distinct Inhibitory Networks in Layer 4 of the Neocortex. Journal of Neurophysiology, 90(5), 2987–3000. https://doi.org/10.1152/jn.00283.2003

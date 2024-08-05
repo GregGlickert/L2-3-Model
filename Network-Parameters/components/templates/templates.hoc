@@ -1,3 +1,4 @@
+
 {load_file("stdrun.hoc")}
 
 /////////////////////// Pyramidal Cells //////////////////////////////
@@ -40,7 +41,7 @@ begintemplate CP_Cell
 
 		// passive properties
 		RM_scale = 0.8 // scale membrane resistance
-		Cap_scale = 1 // scale membrance capacitance
+		Cap_scale = 1.2 // scale membrance capacitance
 		rall = 114.510490019 // Ra all
 		axonCap =  1.01280903702 * Cap_scale // capacitance
 		somaCap =  1.78829677463 * Cap_scale
@@ -73,9 +74,11 @@ begintemplate CP_Cell
 		kap_tq = -52.0967985869
 
 		// h-current
+		h_scale1 = 0.00000001
+		h_scale2 = 0000000001
 		h_erev = -37.0 // global
-		h_gbar = 0.000140956438043
-		h_gbar_tuft = 0.00565 // mho/cm^2 (based on Harnett 2015 J Neurosci)
+		h_gbar = 0.000140956438043 * h_scale1
+		h_gbar_tuft = 0.00565 * h_scale2 // mho/cm^2 (based on Harnett 2015 J Neurosci)
 		nexusdist = 300.0 // nexus distance from soma
 		h_gbar_tuftm = h_gbar_tuft / h_gbar
 		h_lambda = nexusdist / log(h_gbar_tuftm)

@@ -5,7 +5,7 @@
 #SBATCH -t 0-48:00:00  # days-hours:minutes
 
 #SBATCH -N 1
-#SBATCH -n 50 # used for MPI codes, otherwise leave at '1'
+#SBATCH -n 30 # used for MPI codes, otherwise leave at '1'
 ##SBATCH --ntasks-per-node=1  # don't trust SLURM to divide the cores evenly
 ##SBATCH --cpus-per-task=1  # cores per task; set to one if using MPI
 ##SBATCH --exclusive  # using MPI with 90+% of the cores you should go exclusive
@@ -17,8 +17,8 @@ echo "Started running at $START."
 export HDF5_USE_FILE_LOCKING=FALSE
 unset DISPLAY
 
-export OUTPUT_DIR=../Run-Storage/syn-weight-check/block1
-mpirun nrniv -mpi -python run_network.py simulation_config_baseline.json False # args: config file, whether use coreneuron
+export OUTPUT_DIR=../Run-Storage/data_check/block1/short
+mpirun nrniv -mpi -python run_network.py simulation_config_short.json False # args: config file, whether use coreneuron
 
 END=$(date)
 echo "Done running simulation at $END"
